@@ -1,0 +1,1852 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Zendar Universe | Dummy Researcher Content Strategy &amp; SEO Blueprint</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --bg-primary: #06070d;
+  --bg-secondary: #0c0e18;
+  --bg-card: #111322;
+  --bg-card-hover: #161936;
+  --border: #1e2140;
+  --border-accent: #2d3168;
+  --text-primary: #e8eaf6;
+  --text-secondary: #9da2c2;
+  --text-muted: #6b7099;
+  --accent-blue: #4f7df9;
+  --accent-purple: #8b5cf6;
+  --accent-cyan: #22d3ee;
+  --accent-green: #34d399;
+  --accent-orange: #f59e0b;
+  --accent-red: #f87171;
+  --accent-pink: #ec4899;
+  --gradient-hero: linear-gradient(135deg, #4f7df9 0%, #8b5cf6 50%, #ec4899 100%);
+  --gradient-blue: linear-gradient(135deg, #4f7df9 0%, #22d3ee 100%);
+  --gradient-purple: linear-gradient(135deg, #8b5cf6 0%, #ec4899 100%);
+  --gradient-green: linear-gradient(135deg, #34d399 0%, #4f7df9 100%);
+  --gradient-orange: linear-gradient(135deg, #f59e0b 0%, #f87171 100%);
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --shadow-sm: 0 2px 8px rgba(0,0,0,.3);
+  --shadow-md: 0 4px 24px rgba(0,0,0,.4);
+  --shadow-lg: 0 8px 48px rgba(0,0,0,.5);
+  --shadow-glow-blue: 0 0 40px rgba(79,125,249,.15);
+  --shadow-glow-purple: 0 0 40px rgba(139,92,246,.15);
+}
+
+html { scroll-behavior: smooth; font-size: 16px; }
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+/* Stars background */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image:
+    radial-gradient(2px 2px at 20px 30px, rgba(255,255,255,.15), transparent),
+    radial-gradient(2px 2px at 40px 70px, rgba(255,255,255,.1), transparent),
+    radial-gradient(1px 1px at 90px 40px, rgba(255,255,255,.12), transparent),
+    radial-gradient(1px 1px at 130px 80px, rgba(255,255,255,.08), transparent),
+    radial-gradient(2px 2px at 160px 30px, rgba(255,255,255,.1), transparent);
+  background-size: 200px 100px;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: var(--bg-primary); }
+::-webkit-scrollbar-thumb { background: var(--border-accent); border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: var(--accent-blue); }
+
+/* Layout */
+.page-wrapper { position: relative; z-index: 1; }
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* Hero */
+.hero {
+  position: relative;
+  padding: 100px 0 80px;
+  text-align: center;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 800px;
+  height: 800px;
+  background: radial-gradient(circle, rgba(79,125,249,.08) 0%, rgba(139,92,246,.04) 40%, transparent 70%);
+  pointer-events: none;
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 16px;
+  background: rgba(79,125,249,.1);
+  border: 1px solid rgba(79,125,249,.25);
+  border-radius: 100px;
+  font-size: .8rem;
+  font-weight: 600;
+  color: var(--accent-blue);
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  margin-bottom: 24px;
+}
+
+.hero-badge::before {
+  content: '';
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--accent-blue);
+  animation: pulse-dot 2s ease-in-out infinite;
+}
+
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: .5; transform: scale(.8); }
+}
+
+.hero h1 {
+  font-size: clamp(2.2rem, 5vw, 3.6rem);
+  font-weight: 900;
+  line-height: 1.15;
+  letter-spacing: -.03em;
+  margin-bottom: 16px;
+}
+
+.hero h1 .gradient-text {
+  background: var(--gradient-hero);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hero-subtitle {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  max-width: 700px;
+  margin: 0 auto 32px;
+  line-height: 1.7;
+}
+
+.hero-meta {
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+
+.hero-meta span {
+  font-size: .85rem;
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.hero-meta span strong { color: var(--text-secondary); font-weight: 600; }
+
+/* TOC */
+.toc {
+  position: sticky;
+  top: 20px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 28px;
+  margin-bottom: 48px;
+}
+
+.toc-title {
+  font-size: .75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  color: var(--accent-blue);
+  margin-bottom: 16px;
+}
+
+.toc-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 6px;
+}
+
+.toc-list a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 12px;
+  border-radius: var(--radius-sm);
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-size: .9rem;
+  font-weight: 500;
+  transition: all .2s;
+}
+
+.toc-list a:hover {
+  background: rgba(79,125,249,.08);
+  color: var(--text-primary);
+}
+
+.toc-list a .num {
+  font-size: .75rem;
+  font-weight: 700;
+  color: var(--accent-blue);
+  min-width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(79,125,249,.1);
+  border-radius: 6px;
+  font-family: 'JetBrains Mono', monospace;
+}
+
+/* Section */
+.section {
+  margin-bottom: 64px;
+  scroll-margin-top: 24px;
+}
+
+.section-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 32px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--border);
+}
+
+.section-number {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: .8rem;
+  font-weight: 700;
+  color: var(--bg-primary);
+  background: var(--gradient-hero);
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  flex-shrink: 0;
+}
+
+.section-header h2 {
+  font-size: 1.6rem;
+  font-weight: 800;
+  letter-spacing: -.02em;
+}
+
+h3 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin: 32px 0 16px;
+  color: var(--text-primary);
+}
+
+h4 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 20px 0 10px;
+  color: var(--accent-cyan);
+}
+
+p { margin-bottom: 16px; color: var(--text-secondary); }
+
+strong { color: var(--text-primary); font-weight: 600; }
+
+/* Cards */
+.card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 28px;
+  margin-bottom: 20px;
+  transition: all .3s;
+}
+
+.card:hover {
+  border-color: var(--border-accent);
+  box-shadow: var(--shadow-glow-blue);
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+/* Impact list */
+.impact-list {
+  list-style: none;
+  margin: 16px 0;
+}
+
+.impact-list li {
+  padding: 8px 0 8px 28px;
+  position: relative;
+  color: var(--text-secondary);
+}
+
+.impact-list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 16px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--accent-green);
+}
+
+/* Tables */
+.table-wrap {
+  overflow-x: auto;
+  margin: 16px 0 24px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: .88rem;
+}
+
+thead { background: rgba(79,125,249,.06); }
+
+th {
+  text-align: left;
+  padding: 14px 16px;
+  font-weight: 700;
+  font-size: .78rem;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  color: var(--accent-blue);
+  border-bottom: 1px solid var(--border);
+  white-space: nowrap;
+}
+
+td {
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--border);
+  color: var(--text-secondary);
+  vertical-align: top;
+}
+
+tr:last-child td { border-bottom: none; }
+
+tbody tr:hover { background: rgba(79,125,249,.03); }
+
+td:first-child { font-weight: 600; color: var(--text-primary); }
+
+/* Tags / Badges */
+.badge {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 100px;
+  font-size: .72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .05em;
+}
+
+.badge-high { background: rgba(248,113,113,.12); color: var(--accent-red); }
+.badge-critical { background: rgba(236,72,153,.12); color: var(--accent-pink); }
+.badge-medium { background: rgba(245,158,11,.12); color: var(--accent-orange); }
+.badge-low { background: rgba(52,211,153,.12); color: var(--accent-green); }
+.badge-vlow { background: rgba(34,211,238,.12); color: var(--accent-cyan); }
+
+/* Researcher Profiles */
+.researcher-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  margin-bottom: 40px;
+}
+
+.researcher-header {
+  padding: 36px 36px 28px;
+  position: relative;
+  overflow: hidden;
+}
+
+.researcher-header::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  opacity: .07;
+}
+
+.researcher-header.castillo::before { background: var(--gradient-blue); }
+.researcher-header.moreau::before { background: var(--gradient-green); }
+.researcher-header.eriksen::before { background: var(--gradient-orange); }
+.researcher-header.vance::before { background: var(--gradient-purple); }
+
+.researcher-name {
+  font-size: 1.6rem;
+  font-weight: 800;
+  letter-spacing: -.02em;
+  margin-bottom: 4px;
+  position: relative;
+}
+
+.researcher-title {
+  font-size: .95rem;
+  font-weight: 500;
+  margin-bottom: 0;
+  position: relative;
+}
+
+.castillo .researcher-title { color: var(--accent-cyan); }
+.moreau .researcher-title { color: var(--accent-green); }
+.eriksen .researcher-title { color: var(--accent-orange); }
+.vance .researcher-title { color: var(--accent-purple); }
+
+.researcher-body { padding: 0 36px 36px; }
+
+.seo-block {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.seo-label {
+  font-size: .7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  margin-bottom: 8px;
+}
+
+.castillo .seo-label { color: var(--accent-cyan); }
+.moreau .seo-label { color: var(--accent-green); }
+.eriksen .seo-label { color: var(--accent-orange); }
+.vance .seo-label { color: var(--accent-purple); }
+
+.seo-value {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: .85rem;
+  color: var(--text-primary);
+  line-height: 1.6;
+  word-break: break-word;
+}
+
+.bio-text {
+  background: var(--bg-secondary);
+  border-left: 3px solid var(--accent-blue);
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+  padding: 24px;
+  margin: 20px 0;
+  color: var(--text-secondary);
+  line-height: 1.8;
+}
+
+.castillo .bio-text { border-left-color: var(--accent-cyan); }
+.moreau .bio-text { border-left-color: var(--accent-green); }
+.eriksen .bio-text { border-left-color: var(--accent-orange); }
+.vance .bio-text { border-left-color: var(--accent-purple); }
+
+.faq-item {
+  margin-bottom: 16px;
+  padding: 16px 20px;
+  background: var(--bg-secondary);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border);
+}
+
+.faq-q {
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 8px;
+  font-size: .95rem;
+}
+
+.faq-a {
+  color: var(--text-secondary);
+  font-size: .9rem;
+  line-height: 1.7;
+  margin: 0;
+}
+
+.keywords-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.kw-tag {
+  display: inline-block;
+  padding: 5px 14px;
+  background: rgba(79,125,249,.08);
+  border: 1px solid rgba(79,125,249,.2);
+  border-radius: 100px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: .78rem;
+  color: var(--accent-blue);
+  white-space: nowrap;
+}
+
+.castillo .kw-tag { background: rgba(34,211,238,.08); border-color: rgba(34,211,238,.2); color: var(--accent-cyan); }
+.moreau .kw-tag { background: rgba(52,211,153,.08); border-color: rgba(52,211,153,.2); color: var(--accent-green); }
+.eriksen .kw-tag { background: rgba(245,158,11,.08); border-color: rgba(245,158,11,.2); color: var(--accent-orange); }
+.vance .kw-tag { background: rgba(139,92,246,.08); border-color: rgba(139,92,246,.2); color: var(--accent-purple); }
+
+/* Code Block */
+.code-block {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 20px 24px;
+  margin: 16px 0;
+  overflow-x: auto;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: .82rem;
+  line-height: 1.7;
+  color: var(--text-secondary);
+}
+
+.code-block .hl-key { color: var(--accent-cyan); }
+.code-block .hl-str { color: var(--accent-green); }
+.code-block .hl-comment { color: var(--text-muted); font-style: italic; }
+
+/* Narrative boxes */
+.narrative-box {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin: 20px 0;
+}
+
+.narrative-old, .narrative-new {
+  padding: 24px;
+  border-radius: var(--radius-md);
+}
+
+.narrative-old {
+  background: rgba(248,113,113,.05);
+  border: 1px solid rgba(248,113,113,.15);
+}
+
+.narrative-new {
+  background: rgba(52,211,153,.05);
+  border: 1px solid rgba(52,211,153,.15);
+}
+
+.narrative-label {
+  font-size: .72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  margin-bottom: 10px;
+}
+
+.narrative-old .narrative-label { color: var(--accent-red); }
+.narrative-new .narrative-label { color: var(--accent-green); }
+
+.narrative-text {
+  font-size: .95rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+/* Moat */
+.moat-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 12px;
+  margin: 16px 0;
+}
+
+.moat-item {
+  padding: 16px;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  text-align: center;
+  font-size: .88rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+
+.moat-item .num {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 1.4rem;
+  font-weight: 800;
+  display: block;
+  margin-bottom: 6px;
+  background: var(--gradient-hero);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Checklist */
+.checklist {
+  list-style: none;
+  margin: 16px 0;
+}
+
+.checklist li {
+  padding: 8px 0 8px 32px;
+  position: relative;
+  color: var(--text-secondary);
+  font-size: .9rem;
+}
+
+.checklist li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 12px;
+  width: 18px;
+  height: 18px;
+  border-radius: 5px;
+  border: 2px solid var(--border-accent);
+}
+
+/* Phase cards */
+.phase-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  margin-bottom: 24px;
+}
+
+.phase-header {
+  padding: 20px 28px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.phase-header.p1 { background: linear-gradient(135deg, rgba(79,125,249,.08), rgba(34,211,238,.05)); border-bottom: 1px solid rgba(79,125,249,.15); }
+.phase-header.p2 { background: linear-gradient(135deg, rgba(139,92,246,.08), rgba(236,72,153,.05)); border-bottom: 1px solid rgba(139,92,246,.15); }
+.phase-header.p3 { background: linear-gradient(135deg, rgba(52,211,153,.08), rgba(79,125,249,.05)); border-bottom: 1px solid rgba(52,211,153,.15); }
+
+.phase-num {
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 800;
+  font-size: 1.1rem;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+}
+
+.p1 .phase-num { background: rgba(79,125,249,.15); color: var(--accent-blue); }
+.p2 .phase-num { background: rgba(139,92,246,.15); color: var(--accent-purple); }
+.p3 .phase-num { background: rgba(52,211,153,.15); color: var(--accent-green); }
+
+.phase-title { font-weight: 700; font-size: 1.1rem; }
+.phase-sub { font-size: .85rem; color: var(--text-muted); margin-left: auto; }
+
+.phase-body { padding: 24px 28px; }
+
+/* Metrics row */
+.metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+  gap: 16px;
+  margin: 20px 0;
+}
+
+.metric-card {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 20px;
+  text-align: center;
+}
+
+.metric-label {
+  font-size: .75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  color: var(--text-muted);
+  margin-bottom: 8px;
+}
+
+.metric-value {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 1.4rem;
+  font-weight: 800;
+  background: var(--gradient-hero);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 4px;
+}
+
+.metric-sub {
+  font-size: .78rem;
+  color: var(--text-muted);
+}
+
+/* Site tree */
+.site-tree {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: .82rem;
+  line-height: 1.8;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 24px;
+  margin: 16px 0;
+  color: var(--text-muted);
+  overflow-x: auto;
+}
+
+.site-tree .folder { color: var(--accent-blue); font-weight: 600; }
+.site-tree .file { color: var(--accent-cyan); }
+.site-tree .comment { color: var(--text-muted); font-style: italic; }
+
+/* Footer */
+.doc-footer {
+  text-align: center;
+  padding: 48px 0;
+  border-top: 1px solid var(--border);
+  margin-top: 64px;
+}
+
+.doc-footer p {
+  color: var(--text-muted);
+  font-size: .85rem;
+  font-style: italic;
+}
+
+/* Back to top */
+.back-to-top {
+  position: fixed;
+  bottom: 32px;
+  right: 32px;
+  width: 48px;
+  height: 48px;
+  background: var(--accent-blue);
+  border: none;
+  border-radius: 50%;
+  color: white;
+  font-size: 1.2rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all .3s;
+  z-index: 100;
+  box-shadow: 0 4px 20px rgba(79,125,249,.4);
+}
+
+.back-to-top.visible { opacity: 1; transform: translateY(0); }
+.back-to-top:hover { background: var(--accent-purple); transform: translateY(-2px); }
+
+/* Separator */
+.section-sep {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--border-accent), transparent);
+  margin: 48px 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .container { padding: 0 16px; }
+  .narrative-box { grid-template-columns: 1fr; }
+  .card-grid { grid-template-columns: 1fr; }
+  .toc-list { grid-template-columns: 1fr; }
+  .researcher-header, .researcher-body { padding-left: 20px; padding-right: 20px; }
+  .hero { padding: 60px 0 40px; }
+  .hero-meta { gap: 16px; }
+  .moat-grid { grid-template-columns: 1fr 1fr; }
+  .metrics-grid { grid-template-columns: 1fr 1fr; }
+}
+
+/* Quote box */
+.quote-box {
+  background: linear-gradient(135deg, rgba(79,125,249,.06), rgba(139,92,246,.04));
+  border: 1px solid rgba(79,125,249,.15);
+  border-radius: var(--radius-lg);
+  padding: 28px 32px;
+  margin: 20px 0;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  line-height: 1.6;
+  text-align: center;
+  font-style: italic;
+}
+
+/* Tab section for content formats */
+.format-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+.format-header {
+  padding: 16px 24px;
+  border-bottom: 1px solid var(--border);
+  font-weight: 700;
+  font-size: .95rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.format-header .icon { font-size: 1.1rem; }
+.format-body { padding: 20px 24px; }
+</style>
+</head>
+<body>
+<div class="page-wrapper">
+<div class="container">
+
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <div class="hero-badge">Confidential Strategy Document</div>
+  <h1><span class="gradient-text">Dummy Researcher</span><br>Content Strategy &amp; SEO Blueprint</h1>
+  <p class="hero-subtitle">Reposition the 4 dummy researchers as credible research analysts who curate, explain, and explore global astronomy research &mdash; maintaining Zendar Universe brand authority while driving organic growth through 100% SEO-optimized content.</p>
+  <div class="hero-meta">
+    <span><strong>Version</strong> 1.0</span>
+    <span><strong>Date</strong> March 2026</span>
+    <span><strong>Researchers</strong> 4 Profiles</span>
+    <span><strong>Keywords</strong> 100+</span>
+  </div>
+</section>
+
+<!-- ============ TABLE OF CONTENTS ============ -->
+<nav class="toc">
+  <div class="toc-title">Table of Contents</div>
+  <ol class="toc-list">
+    <li><a href="#s1"><span class="num">01</span> Executive Summary</a></li>
+    <li><a href="#s2"><span class="num">02</span> Current State Audit</a></li>
+    <li><a href="#s3"><span class="num">03</span> Competitor Deep-Dive</a></li>
+    <li><a href="#s4"><span class="num">04</span> Repositioning Framework</a></li>
+    <li><a href="#s5"><span class="num">05</span> Researcher Profiles &mdash; Rewritten</a></li>
+    <li><a href="#s6"><span class="num">06</span> SEO Keyword Master List</a></li>
+    <li><a href="#s7"><span class="num">07</span> Content Pillar Strategy</a></li>
+    <li><a href="#s8"><span class="num">08</span> Content Format Playbook</a></li>
+    <li><a href="#s9"><span class="num">09</span> Technical SEO Requirements</a></li>
+    <li><a href="#s10"><span class="num">10</span> Content Calendar Framework</a></li>
+    <li><a href="#s11"><span class="num">11</span> Growth Roadmap</a></li>
+  </ol>
+</nav>
+
+<!-- ============ 1. EXECUTIVE SUMMARY ============ -->
+<section class="section" id="s1">
+  <div class="section-header">
+    <span class="section-number">01</span>
+    <h2>Executive Summary</h2>
+  </div>
+
+  <p>Zendar Universe (ZU) occupies a unique niche: a startup blending <strong>real astronomy research</strong> (Kusmitha Bonda, Arezoo Shirmohammadi) with <strong>creative storytelling</strong> (comics, characters, universe lore). The 4 dummy researchers &mdash; Dr. Mateo Castillo, Dr. Jean-Luc Moreau, Dr. Lars Eriksen, and Dr. Elena Vance &mdash; currently present as original research authors, which creates brand risk as ZU scales.</p>
+
+  <div class="card">
+    <h4>The Strategy</h4>
+    <p>Reposition these 4 personas as <strong>Senior Research Analysts &amp; Science Communicators</strong> who curate breakthrough research from global institutions, provide expert commentary, explore future possibilities, and make complex astrophysics accessible. This model mirrors successful platforms like <strong>Astrobites</strong>, <strong>PBS Space Time</strong>, and <strong>Quanta Magazine</strong> &mdash; all of which have built massive authority without conducting original research.</p>
+  </div>
+
+  <h3>Expected Impact</h3>
+  <ul class="impact-list">
+    <li>Sustainable brand credibility that withstands scrutiny</li>
+    <li>10x content velocity (curating is faster than publishing original research)</li>
+    <li>SEO dominance on trending astronomy topics within 6-12 months</li>
+    <li>Clear differentiation between ZU's original research (real researchers) and ZU's research communication arm (dummy researchers)</li>
+  </ul>
+</section>
+
+<div class="section-sep"></div>
+
+<!-- ============ 2. CURRENT STATE AUDIT ============ -->
+<section class="section" id="s2">
+  <div class="section-header">
+    <span class="section-number">02</span>
+    <h2>Current State Audit</h2>
+  </div>
+
+  <h3>2.1 Current Profiles &mdash; Problems Identified</h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Researcher</th><th>Current Title</th><th>Issues</th></tr></thead>
+      <tbody>
+        <tr><td>Dr. Mateo Castillo</td><td>Director of Galactic Dynamics</td><td>Title implies executive leadership of actual research. Bio claims he &ldquo;leads&rdquo; AGS. Publications appear as if authored by him.</td></tr>
+        <tr><td>Dr. Jean-Luc Moreau</td><td>Senior Research Scientist, EDP</td><td>Bio states he &ldquo;develops and applies sophisticated techniques.&rdquo; Reads as an original researcher.</td></tr>
+        <tr><td>Dr. Lars Eriksen</td><td>Head of Stellar Astrophysics, SNOI</td><td>Bio claims he &ldquo;leads a team that peers into dense molecular clouds.&rdquo; Implies primary research.</td></tr>
+        <tr><td>Dr. Elena Vance</td><td>Lead Cosmologist, CMB Anisotropy Project</td><td>Bio says her &ldquo;research has been instrumental in refining our models.&rdquo; Claims original contribution.</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>2.2 Current SEO Titles (As-Is)</h3>
+  <div class="card-grid">
+    <div class="card">
+      <h4>Dr. Mateo Castillo</h4>
+      <div class="seo-block"><div class="seo-label" style="color:var(--accent-cyan)">SEO Title</div><div class="seo-value">Dr. Mateo Castillo: Director of Galactic Dynamics | Zendar Universe</div></div>
+      <p style="margin:0;font-size:.85rem"><span class="badge badge-high">Missing</span> &nbsp;Keyword targeting, search intent alignment</p>
+    </div>
+    <div class="card">
+      <h4>Dr. Jean-Luc Moreau</h4>
+      <div class="seo-block"><div class="seo-label" style="color:var(--accent-green)">SEO Title</div><div class="seo-value">Dr. Jean-Luc Moreau: Exoplanet Research Scientist | Zendar Universe</div></div>
+      <p style="margin:0;font-size:.85rem"><span class="badge badge-high">Missing</span> &nbsp;No high-volume keywords, no differentiation</p>
+    </div>
+    <div class="card">
+      <h4>Dr. Lars Eriksen</h4>
+      <div class="seo-block"><div class="seo-label" style="color:var(--accent-orange)">SEO Title</div><div class="seo-value">Dr. Lars Eriksen: Head of Stellar Astrophysics | Zendar Universe</div></div>
+      <p style="margin:0;font-size:.85rem"><span class="badge badge-high">Missing</span> &nbsp;No search-intent keywords, generic title</p>
+    </div>
+    <div class="card">
+      <h4>Dr. Elena Vance</h4>
+      <div class="seo-block"><div class="seo-label" style="color:var(--accent-purple)">SEO Title</div><div class="seo-value">Dr. Elena Vance: Lead Cosmologist &amp; CMB Expert | Zendar Universe</div></div>
+      <p style="margin:0;font-size:.85rem"><span class="badge badge-high">Missing</span> &nbsp;Weak keyword density, no long-tail targeting</p>
+    </div>
+  </div>
+
+  <h3>2.3 Current Publication Mapping</h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Researcher</th><th># Pubs</th><th>Primary Topics</th></tr></thead>
+      <tbody>
+        <tr><td>Dr. Mateo Castillo</td><td>6</td><td>JWST little red dots, dark matter map, CMB anomalies, Gaia DR3 Andromeda, MoM-z14 galaxy, GLEAM-X survey</td></tr>
+        <tr><td>Dr. Jean-Luc Moreau</td><td>6</td><td>Artemis II, Migdal effect, metallic winds, fastest asteroid, rogue planet, JWST exoplanets</td></tr>
+        <tr><td>Dr. Lars Eriksen</td><td>6</td><td>Webb diamond-rain planet, HD 137010b, white dwarf flares, solar flares, Ring Nebula, white dwarf detonation</td></tr>
+        <tr><td>Dr. Elena Vance</td><td>6</td><td>Migdal effect dark matter, SMC tidal disruption, quantum entanglement black holes, GRB, quadratic gravity, cosmic dawn</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<div class="section-sep"></div>
+
+<!-- ============ 3. COMPETITOR DEEP DIVE ============ -->
+<section class="section" id="s3">
+  <div class="section-header">
+    <span class="section-number">03</span>
+    <h2>Competitor Deep-Dive</h2>
+  </div>
+
+  <h3>3.1 Tier 1 &mdash; High-Authority Competitors</h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Competitor</th><th>Traffic (Est.)</th><th>Content Model</th><th>Strength</th><th>Weakness (ZU Opp.)</th></tr></thead>
+      <tbody>
+        <tr><td>Space.com</td><td>50M+</td><td>News articles</td><td>Massive domain authority, Google News</td><td>Generic, no research depth</td></tr>
+        <tr><td>Universe Today</td><td>10M+</td><td>Community-driven news</td><td>Loyal community, prolific</td><td>No research projects, no personas</td></tr>
+        <tr><td>Phys.org</td><td>30M+</td><td>Aggregated press releases</td><td>Massive volume</td><td>Zero original analysis</td></tr>
+        <tr><td>NASA Science</td><td>20M+</td><td>Institutional blogs</td><td>Highest E-E-A-T, .gov</td><td>Bureaucratic, slow</td></tr>
+        <tr><td>Scientific American</td><td>15M+</td><td>Premium long-form</td><td>Deep-dive quality</td><td>Paywalled, not astronomy-focused</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>3.2 Tier 2 &mdash; Research-Focused</h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Competitor</th><th>Content Model</th><th>Strength</th><th>Weakness (ZU Opp.)</th></tr></thead>
+      <tbody>
+        <tr><td>Astrobites</td><td>Grad students summarize papers</td><td>Accessible, peer-reviewed-adjacent</td><td>Academic tone, volunteer-run</td></tr>
+        <tr><td>Quanta Magazine</td><td>Professional science journalism</td><td>Exceptional quality</td><td>Broad science, expensive</td></tr>
+        <tr><td>ScienceDaily</td><td>Press release aggregation</td><td>High volume</td><td>No analysis, no personality</td></tr>
+        <tr><td>Astrophyzix</td><td>Evidence-first space science</td><td>Direct competitor model</td><td>New/small, limited depth</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>3.3 Tier 3 &mdash; Emerging / Direct</h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Competitor</th><th>Content Model</th><th>ZU Advantage</th></tr></thead>
+      <tbody>
+        <tr><td>TheScienceBreaker</td><td>Simplified paper summaries</td><td>ZU has researcher personas + creative universe</td></tr>
+        <tr><td>ScienceCast</td><td>AI-generated preprint summaries</td><td>ZU has human-authored depth + brand storytelling</td></tr>
+        <tr><td>Whata.Space</td><td>AI visibility for astronomers</td><td>ZU has real researchers + publication track record</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>3.4 ZU's Competitive Moat</h3>
+  <div class="moat-grid">
+    <div class="moat-item"><span class="num">1</span>Real Published Research</div>
+    <div class="moat-item"><span class="num">2</span>Research Curation Arm</div>
+    <div class="moat-item"><span class="num">3</span>Creative Universe</div>
+    <div class="moat-item"><span class="num">4</span>StarTalk Live Community</div>
+    <div class="moat-item"><span class="num">5</span>6 Research Projects</div>
+  </div>
+  <div class="quote-box">&ldquo;The only astronomy brand where cutting-edge research meets cosmic storytelling.&rdquo;</div>
+</section>
+
+<div class="section-sep"></div>
+
+<!-- ============ 4. REPOSITIONING FRAMEWORK ============ -->
+<section class="section" id="s4">
+  <div class="section-header">
+    <span class="section-number">04</span>
+    <h2>Repositioning Framework</h2>
+  </div>
+
+  <h3>4.1 The New Narrative</h3>
+  <div class="narrative-box">
+    <div class="narrative-old">
+      <div class="narrative-label">Old Narrative (Risky)</div>
+      <p class="narrative-text">&ldquo;Our researchers conduct and publish original research.&rdquo;</p>
+    </div>
+    <div class="narrative-new">
+      <div class="narrative-label">New Narrative (Sustainable)</div>
+      <p class="narrative-text">&ldquo;Our research analysts monitor, curate, and analyze the world&rsquo;s most important astronomy discoveries &mdash; providing expert commentary and exploring future research possibilities through ZU&rsquo;s research programs.&rdquo;</p>
+    </div>
+  </div>
+
+  <h3>4.2 Key Language Shifts</h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Old Language</th><th>New Language</th></tr></thead>
+      <tbody>
+        <tr><td>&ldquo;leads research&rdquo;</td><td>&ldquo;leads research analysis and communication&rdquo;</td></tr>
+        <tr><td>&ldquo;his/her research discovered&rdquo;</td><td>&ldquo;in his/her analysis of the latest findings&rdquo;</td></tr>
+        <tr><td>&ldquo;conducts experiments&rdquo;</td><td>&ldquo;evaluates and contextualizes emerging research&rdquo;</td></tr>
+        <tr><td>&ldquo;published by [researcher]&rdquo;</td><td>&ldquo;analyzed &amp; reported by [researcher]&rdquo;</td></tr>
+        <tr><td>&ldquo;our team discovered&rdquo;</td><td>&ldquo;our team examines and explores&rdquo;</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>4.3 Publication Attribution Model</h3>
+  <div class="code-block">
+<span class="hl-key">HEADLINE:</span> [SEO-Optimized Discovery Title]<br>
+<span class="hl-key">BYLINE:</span> <span class="hl-str">"Analyzed &amp; Reported by [Researcher Name] | [Their ZU Role]"</span><br>
+<span class="hl-key">OPENING:</span> <span class="hl-str">"In a groundbreaking study published in [Journal] by [Original Authors at Institution], researchers have [discovery]..."</span><br>
+<span class="hl-key">BODY:</span> Expert analysis, context, implications<br>
+<span class="hl-key">SECTION:</span> <span class="hl-str">"ZU Research Perspective"</span> <span class="hl-comment">// where the researcher adds commentary on future possibilities</span><br>
+<span class="hl-key">CLOSING:</span> <span class="hl-str">"This research aligns with Zendar Universe's [relevant project] and opens pathways for [future exploration]."</span>
+  </div>
+
+  <h3>4.4 New Role Titles</h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Researcher</th><th>Old Title</th><th>New Title</th></tr></thead>
+      <tbody>
+        <tr><td>Dr. Mateo Castillo</td><td>Director of Galactic Dynamics</td><td><strong>Senior Research Analyst &mdash; Galactic Dynamics &amp; Dark Matter</strong></td></tr>
+        <tr><td>Dr. Jean-Luc Moreau</td><td>Senior Research Scientist, EDP</td><td><strong>Lead Research Analyst &mdash; Exoplanets &amp; Astrobiology</strong></td></tr>
+        <tr><td>Dr. Lars Eriksen</td><td>Head of Stellar Astrophysics, SNOI</td><td><strong>Lead Research Analyst &mdash; Stellar Astrophysics &amp; Planet Formation</strong></td></tr>
+        <tr><td>Dr. Elena Vance</td><td>Lead Cosmologist, CMB Anisotropy Project</td><td><strong>Senior Research Analyst &mdash; Cosmology &amp; Fundamental Physics</strong></td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<div class="section-sep"></div>
+
+<!-- ============ 5. RESEARCHER PROFILES ============ -->
+<section class="section" id="s5">
+  <div class="section-header">
+    <span class="section-number">05</span>
+    <h2>Researcher Profiles &mdash; Rewritten</h2>
+  </div>
+
+  <!-- DR. MATEO CASTILLO -->
+  <div class="researcher-card castillo">
+    <div class="researcher-header castillo">
+      <div class="researcher-name">Dr. Mateo Castillo</div>
+      <p class="researcher-title">Senior Research Analyst &mdash; Galactic Dynamics &amp; Dark Matter</p>
+    </div>
+    <div class="researcher-body">
+      <div class="seo-block">
+        <div class="seo-label">SEO Title</div>
+        <div class="seo-value">Dr. Mateo Castillo: Galactic Dynamics &amp; Dark Matter Research Analyst | Zendar Universe</div>
+      </div>
+      <div class="seo-block">
+        <div class="seo-label">Meta Description</div>
+        <div class="seo-value">Dr. Mateo Castillo is a Senior Research Analyst at Zendar Universe specializing in galactic dynamics, dark matter distribution, and galaxy evolution. Follow his expert analysis of Andromeda surveys, JWST dark matter maps, and galactic merger simulations.</div>
+      </div>
+
+      <h4>New Bio</h4>
+      <div class="bio-text">
+        <p style="margin-bottom:12px">Dr. Mateo Castillo is a Senior Research Analyst at Zendar Universe, specializing in galactic dynamics, dark matter structure, and the evolution of galaxies across cosmic time. Through The Andromeda Grand Survey (AGS), Dr. Castillo tracks and analyzes the latest global research on galactic mergers, dark matter distribution, and large-scale cosmic structure.</p>
+        <p style="margin-bottom:12px">His work focuses on curating and interpreting breakthrough discoveries &mdash; from JWST&rsquo;s revolutionary dark matter maps to Gaia DR3&rsquo;s insights on the Milky Way-Andromeda collision trajectory. Dr. Castillo translates complex galactic dynamics research into accessible, in-depth analyses that connect cutting-edge findings to the bigger picture of cosmic evolution.</p>
+        <p style="margin-bottom:0">By contextualizing research from leading institutions worldwide, Dr. Castillo helps Zendar Universe&rsquo;s audience understand how galaxies form, interact, and shape the large-scale structure of the universe &mdash; and what these discoveries mean for our own Milky Way&rsquo;s past and future.</p>
+      </div>
+
+      <h4>FAQ Set</h4>
+      <div class="faq-item"><div class="faq-q">Q: What does Dr. Mateo Castillo do at Zendar Universe?</div><p class="faq-a">Dr. Castillo is a Senior Research Analyst who monitors and analyzes the latest discoveries in galactic dynamics and dark matter research from institutions worldwide. He provides expert commentary and in-depth analysis through ZU&rsquo;s Andromeda Grand Survey program.</p></div>
+      <div class="faq-item"><div class="faq-q">Q: What topics does Dr. Castillo cover?</div><p class="faq-a">His primary focus areas include dark matter mapping and distribution, galaxy formation and evolution, the Milky Way-Andromeda interaction, galactic merger simulations, and large-scale cosmic structure &mdash; covering research from JWST, Gaia, GLEAM-X, and other major observatories.</p></div>
+      <div class="faq-item"><div class="faq-q">Q: How does Dr. Castillo&rsquo;s work relate to Zendar Universe&rsquo;s research mission?</div><p class="faq-a">Dr. Castillo bridges the gap between cutting-edge galactic research and public understanding. His analyses connect discoveries from around the world to ZU&rsquo;s core research programs, helping readers grasp the significance of dark matter, galaxy evolution, and cosmic structure.</p></div>
+      <div class="faq-item"><div class="faq-q">Q: Why is understanding galactic dynamics important?</div><p class="faq-a">Galactic dynamics reveals how dark matter &mdash; which makes up 85% of the universe&rsquo;s matter &mdash; shapes everything from individual galaxies to the cosmic web. Understanding these forces tells us about the universe&rsquo;s past, present, and ultimate fate, including what will happen when the Milky Way and Andromeda eventually merge.</p></div>
+
+      <h4>Target Keywords</h4>
+      <div class="keywords-grid">
+        <span class="kw-tag">galactic dynamics research</span>
+        <span class="kw-tag">dark matter map explained</span>
+        <span class="kw-tag">Andromeda galaxy survey</span>
+        <span class="kw-tag">JWST dark matter discoveries</span>
+        <span class="kw-tag">galaxy merger simulation</span>
+        <span class="kw-tag">Milky Way Andromeda collision</span>
+        <span class="kw-tag">cosmic web structure</span>
+        <span class="kw-tag">dark matter distribution</span>
+        <span class="kw-tag">galaxy evolution research 2026</span>
+        <span class="kw-tag">Gaia DR3 galactic dynamics</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- DR. JEAN-LUC MOREAU -->
+  <div class="researcher-card moreau">
+    <div class="researcher-header moreau">
+      <div class="researcher-name">Dr. Jean-Luc Moreau</div>
+      <p class="researcher-title">Lead Research Analyst &mdash; Exoplanets &amp; Astrobiology</p>
+    </div>
+    <div class="researcher-body">
+      <div class="seo-block">
+        <div class="seo-label">SEO Title</div>
+        <div class="seo-value">Dr. Jean-Luc Moreau: Exoplanet &amp; Astrobiology Research Analyst | Zendar Universe</div>
+      </div>
+      <div class="seo-block">
+        <div class="seo-label">Meta Description</div>
+        <div class="seo-value">Dr. Jean-Luc Moreau is a Lead Research Analyst at Zendar Universe covering exoplanet discoveries, habitable zone planets, and the search for life beyond Earth. Explore his expert analysis of JWST exoplanet breakthroughs, biosignature detection, and rogue planet discoveries.</div>
+      </div>
+
+      <h4>New Bio</h4>
+      <div class="bio-text">
+        <p style="margin-bottom:12px">Dr. Jean-Luc Moreau is a Lead Research Analyst at Zendar Universe, dedicated to tracking and analyzing the most significant developments in exoplanet science and astrobiology. Through the Exoplanet Discovery Program (EDP), Dr. Moreau curates and interprets groundbreaking discoveries about distant worlds &mdash; from JWST&rsquo;s atmospheric characterization of exoplanets to the detection of rogue planets drifting through interstellar space.</p>
+        <p style="margin-bottom:12px">His analytical work spans the full spectrum of exoplanetary science: transit photometry breakthroughs, radial velocity discoveries, atmospheric biosignature research, and the ongoing search for Earth-like worlds in habitable zones. Dr. Moreau transforms complex observational data and peer-reviewed findings into compelling narratives that explore what these discoveries mean for humanity&rsquo;s greatest question &mdash; are we alone?</p>
+        <p style="margin-bottom:0">By monitoring research from NASA, ESA, and leading observatories worldwide, Dr. Moreau ensures Zendar Universe remains at the forefront of exoplanet communication, delivering timely, accurate, and deeply researched analyses of every major discovery in the field.</p>
+      </div>
+
+      <h4>FAQ Set</h4>
+      <div class="faq-item"><div class="faq-q">Q: What is Dr. Jean-Luc Moreau&rsquo;s role at Zendar Universe?</div><p class="faq-a">Dr. Moreau is a Lead Research Analyst who tracks, curates, and provides expert analysis of the latest exoplanet discoveries and astrobiology research from global institutions. He communicates these findings through ZU&rsquo;s Exoplanet Discovery Program.</p></div>
+      <div class="faq-item"><div class="faq-q">Q: What topics does Dr. Moreau analyze?</div><p class="faq-a">His coverage includes JWST exoplanet atmospheric analysis, habitable zone planet discoveries, biosignature detection methods, rogue planet research, transit photometry and radial velocity discoveries, and the search for extraterrestrial life.</p></div>
+      <div class="faq-item"><div class="faq-q">Q: How does Dr. Moreau select which research to cover?</div><p class="faq-a">Dr. Moreau prioritizes peer-reviewed research from top-tier journals and observatory announcements that advance our understanding of exoplanetary systems, particularly discoveries relevant to habitability, atmospheric composition, and planetary formation.</p></div>
+      <div class="faq-item"><div class="faq-q">Q: Why is exoplanet research important for everyone?</div><p class="faq-a">Exoplanet research directly addresses one of humanity&rsquo;s most profound questions &mdash; whether life exists beyond Earth. With over 5,700 confirmed exoplanets as of 2026, and instruments like JWST now able to analyze their atmospheres, we are closer than ever to potentially detecting signs of extraterrestrial life.</p></div>
+
+      <h4>Target Keywords</h4>
+      <div class="keywords-grid">
+        <span class="kw-tag">exoplanet discoveries 2026</span>
+        <span class="kw-tag">JWST exoplanet atmosphere</span>
+        <span class="kw-tag">habitable zone planets</span>
+        <span class="kw-tag">biosignature detection</span>
+        <span class="kw-tag">rogue planet discovery</span>
+        <span class="kw-tag">search for extraterrestrial life</span>
+        <span class="kw-tag">exoplanet atmospheric characterization</span>
+        <span class="kw-tag">Earth-like exoplanets</span>
+        <span class="kw-tag">transit photometry exoplanets</span>
+        <span class="kw-tag">Nancy Grace Roman Space Telescope</span>
+        <span class="kw-tag">PLATO mission habitable planets</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- DR. LARS ERIKSEN -->
+  <div class="researcher-card eriksen">
+    <div class="researcher-header eriksen">
+      <div class="researcher-name">Dr. Lars Eriksen</div>
+      <p class="researcher-title">Lead Research Analyst &mdash; Stellar Astrophysics &amp; Planet Formation</p>
+    </div>
+    <div class="researcher-body">
+      <div class="seo-block">
+        <div class="seo-label">SEO Title</div>
+        <div class="seo-value">Dr. Lars Eriksen: Stellar Astrophysics &amp; Star Formation Research Analyst | Zendar Universe</div>
+      </div>
+      <div class="seo-block">
+        <div class="seo-label">Meta Description</div>
+        <div class="seo-value">Dr. Lars Eriksen is a Lead Research Analyst at Zendar Universe specializing in stellar astrophysics, star formation, and planetary system origins. Follow his expert analysis of Webb discoveries, white dwarf research, and protoplanetary disk observations.</div>
+      </div>
+
+      <h4>New Bio</h4>
+      <div class="bio-text">
+        <p style="margin-bottom:12px">Dr. Lars Eriksen is a Lead Research Analyst at Zendar Universe, focused on interpreting and communicating the latest advances in stellar astrophysics &mdash; from the birth of stars in molecular clouds to the explosive deaths of white dwarfs. Through the Stellar Nursery Observation Initiative (SNOI), Dr. Eriksen curates and analyzes cutting-edge research on star formation, protoplanetary disk evolution, stellar remnants, and the conditions that give rise to planetary systems.</p>
+        <p style="margin-bottom:12px">His analytical expertise spans infrared and radio astronomy, where the world&rsquo;s most powerful telescopes &mdash; including JWST, the South Pole Telescope, and WEAVE &mdash; reveal processes hidden within dense cosmic dust. Dr. Eriksen&rsquo;s work connects these observations to the fundamental question of how stars and planets form, providing readers with expert-level insight into discoveries that reshape our understanding of cosmic origins.</p>
+        <p style="margin-bottom:0">By contextualizing research from observatories worldwide, Dr. Eriksen ensures that every major stellar astrophysics discovery is presented with the depth and clarity that defines Zendar Universe&rsquo;s commitment to accessible, rigorous science communication.</p>
+      </div>
+
+      <h4>FAQ Set</h4>
+      <div class="faq-item"><div class="faq-q">Q: What does Dr. Lars Eriksen focus on at Zendar Universe?</div><p class="faq-a">Dr. Eriksen is a Lead Research Analyst who tracks and analyzes the latest discoveries in stellar astrophysics, including star formation, white dwarf physics, solar flare mechanisms, and protoplanetary disk evolution. He provides expert commentary through ZU&rsquo;s Stellar Nursery Observation Initiative.</p></div>
+      <div class="faq-item"><div class="faq-q">Q: What kind of research does Dr. Eriksen cover?</div><p class="faq-a">His analysis covers stellar birth in molecular clouds, white dwarf detonation mechanisms, solar and stellar flare physics, protoplanetary disk chemistry, planetary nebula structures, and exoplanet discoveries related to stellar evolution.</p></div>
+      <div class="faq-item"><div class="faq-q">Q: How does studying star formation help us understand our origins?</div><p class="faq-a">Every atom in our bodies was forged inside stars. By studying how stars form from collapsing gas clouds and how they create planetary systems, we trace the origins of our own solar system &mdash; and understand the conditions necessary for life to emerge anywhere in the universe.</p></div>
+      <div class="faq-item"><div class="faq-q">Q: What telescopes and instruments does Dr. Eriksen&rsquo;s analysis draw from?</div><p class="faq-a">His coverage draws from JWST infrared observations, WEAVE spectroscopy, the South Pole Telescope, ground-based radio interferometers, and space-based observatories that peer through cosmic dust to reveal star-forming regions invisible to optical telescopes.</p></div>
+
+      <h4>Target Keywords</h4>
+      <div class="keywords-grid">
+        <span class="kw-tag">star formation process explained</span>
+        <span class="kw-tag">stellar astrophysics research 2026</span>
+        <span class="kw-tag">protoplanetary disk formation</span>
+        <span class="kw-tag">white dwarf explosion mechanism</span>
+        <span class="kw-tag">JWST star formation discoveries</span>
+        <span class="kw-tag">solar flare mechanism research</span>
+        <span class="kw-tag">planetary nebula chemical structure</span>
+        <span class="kw-tag">molecular cloud star birth</span>
+        <span class="kw-tag">stellar nursery observations</span>
+        <span class="kw-tag">how do stars form</span>
+        <span class="kw-tag">Webb telescope stellar discoveries</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- DR. ELENA VANCE -->
+  <div class="researcher-card vance">
+    <div class="researcher-header vance">
+      <div class="researcher-name">Dr. Elena Vance</div>
+      <p class="researcher-title">Senior Research Analyst &mdash; Cosmology &amp; Fundamental Physics</p>
+    </div>
+    <div class="researcher-body">
+      <div class="seo-block">
+        <div class="seo-label">SEO Title</div>
+        <div class="seo-value">Dr. Elena Vance: Cosmology &amp; Dark Matter Research Analyst | Zendar Universe</div>
+      </div>
+      <div class="seo-block">
+        <div class="seo-label">Meta Description</div>
+        <div class="seo-value">Dr. Elena Vance is a Senior Research Analyst at Zendar Universe covering cosmology, dark matter, dark energy, and the cosmic microwave background. Explore her expert analysis of CMB anomalies, quantum gravity research, and early universe discoveries.</div>
+      </div>
+
+      <h4>New Bio</h4>
+      <div class="bio-text">
+        <p style="margin-bottom:12px">Dr. Elena Vance is a Senior Research Analyst at Zendar Universe, specializing in the analysis and communication of the most profound discoveries in cosmology and fundamental physics. Through the CMB Anisotropy Project, Dr. Vance curates and interprets research on the cosmic microwave background, dark matter detection, dark energy models, and the physics of the early universe.</p>
+        <p style="margin-bottom:12px">Her analytical work bridges the gap between highly technical cosmological research and public understanding. From the latest Migdal effect observations that open new pathways for light dark matter detection, to quantum entanglement experiments that challenge our understanding of black hole information paradoxes, Dr. Vance delivers rigorous, accessible analysis of the research that reshapes our picture of the cosmos.</p>
+        <p style="margin-bottom:0">Dr. Vance monitors and evaluates findings from CERN, LIGO, the Planck collaboration, JWST, and leading theoretical physics groups worldwide. Her reporting ensures Zendar Universe&rsquo;s audience stays informed about the discoveries that are rewriting the fundamental laws of physics &mdash; and what they mean for our understanding of the universe&rsquo;s origin, structure, and ultimate fate.</p>
+      </div>
+
+      <h4>FAQ Set</h4>
+      <div class="faq-item"><div class="faq-q">Q: What is Dr. Elena Vance&rsquo;s focus at Zendar Universe?</div><p class="faq-a">Dr. Vance is a Senior Research Analyst who curates and analyzes the latest research in cosmology, dark matter physics, dark energy, and the cosmic microwave background. She provides expert-level commentary through ZU&rsquo;s CMB Anisotropy Project.</p></div>
+      <div class="faq-item"><div class="faq-q">Q: What topics does Dr. Vance cover?</div><p class="faq-a">Her coverage spans CMB anomalies and anisotropy, dark matter detection experiments (including the Migdal effect), quantum gravity and black hole physics, early universe formation, cosmic dawn, and challenges to the standard cosmological model.</p></div>
+      <div class="faq-item"><div class="faq-q">Q: How does Dr. Vance&rsquo;s analysis help readers understand cosmology?</div><p class="faq-a">Cosmology deals with the universe&rsquo;s most fundamental questions &mdash; its origin, composition, and fate. Dr. Vance translates complex findings from particle physics experiments and space-based observatories into clear, contextualized analyses that explain what each discovery means for our understanding of reality.</p></div>
+      <div class="faq-item"><div class="faq-q">Q: Why is dark matter research one of the most important fields in modern physics?</div><p class="faq-a">Dark matter makes up approximately 27% of the universe, yet it has never been directly detected. Every experiment that narrows down its properties &mdash; from direct detection attempts to gravitational lensing maps &mdash; brings us closer to understanding what the majority of the universe is actually made of. This is one of the most consequential unsolved problems in all of science.</p></div>
+
+      <h4>Target Keywords</h4>
+      <div class="keywords-grid">
+        <span class="kw-tag">cosmic microwave background explained</span>
+        <span class="kw-tag">dark matter detection 2026</span>
+        <span class="kw-tag">dark energy research</span>
+        <span class="kw-tag">CMB anomalies cosmology</span>
+        <span class="kw-tag">Migdal effect dark matter</span>
+        <span class="kw-tag">quantum gravity black holes</span>
+        <span class="kw-tag">early universe formation</span>
+        <span class="kw-tag">cosmic dawn discoveries</span>
+        <span class="kw-tag">cosmological model challenges</span>
+        <span class="kw-tag">Planck CMB data analysis</span>
+        <span class="kw-tag">dark matter vs dark energy</span>
+        <span class="kw-tag">universe origin research</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="section-sep"></div>
+
+<!-- ============ 6. SEO KEYWORD MASTER LIST ============ -->
+<section class="section" id="s6">
+  <div class="section-header">
+    <span class="section-number">06</span>
+    <h2>SEO Keyword Master List</h2>
+  </div>
+
+  <h3>6.1 Primary Keywords (High Volume, High Competition)</h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Keyword Cluster</th><th>Primary Keyword</th><th>Intent</th><th>Target Researcher</th></tr></thead>
+      <tbody>
+        <tr><td>Dark Matter</td><td><code>what is dark matter</code></td><td>Informational</td><td>Dr. Elena Vance</td></tr>
+        <tr><td>Dark Energy</td><td><code>dark energy explained</code></td><td>Informational</td><td>Dr. Elena Vance</td></tr>
+        <tr><td>Exoplanets</td><td><code>exoplanet discoveries 2026</code></td><td>Info / Nav</td><td>Dr. Jean-Luc Moreau</td></tr>
+        <tr><td>JWST</td><td><code>James Webb Space Telescope discoveries</code></td><td>Informational</td><td>All researchers</td></tr>
+        <tr><td>Star Formation</td><td><code>how do stars form</code></td><td>Informational</td><td>Dr. Lars Eriksen</td></tr>
+        <tr><td>CMB</td><td><code>cosmic microwave background</code></td><td>Informational</td><td>Dr. Elena Vance</td></tr>
+        <tr><td>Galaxy Formation</td><td><code>how do galaxies form</code></td><td>Informational</td><td>Dr. Mateo Castillo</td></tr>
+        <tr><td>Black Holes</td><td><code>supermassive black hole research</code></td><td>Informational</td><td>Dr. Castillo / Dr. Vance</td></tr>
+        <tr><td>Habitable Planets</td><td><code>habitable zone exoplanets</code></td><td>Informational</td><td>Dr. Jean-Luc Moreau</td></tr>
+        <tr><td>Big Bang</td><td><code>what happened after the big bang</code></td><td>Informational</td><td>Dr. Elena Vance</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>6.2 Long-Tail Keywords (Lower Competition, Higher Conversion)</h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Long-Tail Keyword</th><th>Volume (Est.)</th><th>Competition</th><th>Target</th></tr></thead>
+      <tbody>
+        <tr><td><code>JWST dark matter map cosmic web 2026</code></td><td>1K-5K</td><td><span class="badge badge-low">Low</span></td><td>Dr. Castillo</td></tr>
+        <tr><td><code>fastest spinning asteroid ever discovered</code></td><td>1K-5K</td><td><span class="badge badge-low">Low</span></td><td>Dr. Moreau</td></tr>
+        <tr><td><code>CMB cold spot anomaly explained</code></td><td>500-1K</td><td><span class="badge badge-low">Low</span></td><td>Dr. Vance</td></tr>
+        <tr><td><code>diamond rain exoplanet neutron star</code></td><td>1K-5K</td><td><span class="badge badge-low">Low</span></td><td>Dr. Eriksen</td></tr>
+        <tr><td><code>Milky Way Andromeda collision when</code></td><td>5K-10K</td><td><span class="badge badge-medium">Medium</span></td><td>Dr. Castillo</td></tr>
+        <tr><td><code>rogue planet mass measurement</code></td><td>500-1K</td><td><span class="badge badge-low">Low</span></td><td>Dr. Moreau</td></tr>
+        <tr><td><code>white dwarf double detonation supernova</code></td><td>500-1K</td><td><span class="badge badge-low">Low</span></td><td>Dr. Eriksen</td></tr>
+        <tr><td><code>quantum entanglement black hole information paradox</code></td><td>1K-5K</td><td><span class="badge badge-medium">Medium</span></td><td>Dr. Vance</td></tr>
+        <tr><td><code>Migdal effect dark matter detection</code></td><td>500-1K</td><td><span class="badge badge-vlow">V. Low</span></td><td>Dr. Vance</td></tr>
+        <tr><td><code>GLEAM-X radio survey Milky Way</code></td><td>500-1K</td><td><span class="badge badge-vlow">V. Low</span></td><td>Dr. Castillo</td></tr>
+        <tr><td><code>Nancy Grace Roman Space Telescope launch 2026</code></td><td>5K-10K</td><td><span class="badge badge-medium">Medium</span></td><td>Dr. Moreau</td></tr>
+        <tr><td><code>PLATO mission ESA habitable planets 2026</code></td><td>1K-5K</td><td><span class="badge badge-low">Low</span></td><td>Dr. Moreau</td></tr>
+        <tr><td><code>solar flare chain reaction mechanism</code></td><td>500-1K</td><td><span class="badge badge-vlow">V. Low</span></td><td>Dr. Eriksen</td></tr>
+        <tr><td><code>Ring Nebula iron bar chemical structure</code></td><td>500-1K</td><td><span class="badge badge-vlow">V. Low</span></td><td>Dr. Eriksen</td></tr>
+        <tr><td><code>dark energy survey results 2026</code></td><td>1K-5K</td><td><span class="badge badge-low">Low</span></td><td>Dr. Vance</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>6.3 Question-Based Keywords (Featured Snippet Targets)</h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Question Keyword</th><th>Target Researcher</th></tr></thead>
+      <tbody>
+        <tr><td>what is dark matter made of</td><td>Dr. Elena Vance</td></tr>
+        <tr><td>how many exoplanets have been discovered</td><td>Dr. Jean-Luc Moreau</td></tr>
+        <tr><td>will the Milky Way and Andromeda collide</td><td>Dr. Mateo Castillo</td></tr>
+        <tr><td>how are stars born in nebulae</td><td>Dr. Lars Eriksen</td></tr>
+        <tr><td>what is the cosmic microwave background radiation</td><td>Dr. Elena Vance</td></tr>
+        <tr><td>can we find life on exoplanets</td><td>Dr. Jean-Luc Moreau</td></tr>
+        <tr><td>what happens when galaxies merge</td><td>Dr. Mateo Castillo</td></tr>
+        <tr><td>what is a protoplanetary disk</td><td>Dr. Lars Eriksen</td></tr>
+        <tr><td>how old is the universe</td><td>Dr. Elena Vance</td></tr>
+        <tr><td>what is a rogue planet</td><td>Dr. Jean-Luc Moreau</td></tr>
+        <tr><td>what causes a supernova explosion</td><td>Dr. Lars Eriksen</td></tr>
+        <tr><td>what is dark energy doing to the universe</td><td>Dr. Elena Vance</td></tr>
+        <tr><td>how does JWST detect exoplanet atmospheres</td><td>Dr. Jean-Luc Moreau</td></tr>
+        <tr><td>what is the cosmic web</td><td>Dr. Mateo Castillo</td></tr>
+        <tr><td>how do black holes form</td><td>Dr. Vance / Dr. Eriksen</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>6.4 Trending &amp; Timely Keywords (2026 Opportunities)</h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Trending Topic</th><th>Peak Window</th><th>Target Researcher</th><th>Content Type</th></tr></thead>
+      <tbody>
+        <tr><td>Nancy Grace Roman Space Telescope</td><td>Q3-Q4 2026</td><td>Dr. Jean-Luc Moreau</td><td>Pre-launch analysis, mission explainer</td></tr>
+        <tr><td>ESA PLATO Mission</td><td>Q4 2026 (Dec)</td><td>Dr. Jean-Luc Moreau</td><td>Habitable planet search preview</td></tr>
+        <tr><td>Dark Energy Survey Final Results</td><td>Throughout 2026</td><td>Dr. Elena Vance</td><td>Results analysis, implications</td></tr>
+        <tr><td>JWST Cycle 4 Results</td><td>Ongoing</td><td>All researchers</td><td>Weekly discovery coverage</td></tr>
+        <tr><td>Fast Radio Burst Breakthroughs</td><td>Ongoing</td><td>Dr. Elena Vance</td><td>FRB source analysis</td></tr>
+        <tr><td>Artemis Program Updates</td><td>Throughout 2026</td><td>Dr. Jean-Luc Moreau</td><td>Lunar mission coverage</td></tr>
+        <tr><td>Vera C. Rubin Observatory First Light</td><td>2026</td><td>Dr. Lars Eriksen</td><td>LSST data analysis</td></tr>
+        <tr><td>LIGO O4 Run Results</td><td>2026</td><td>Dr. Elena Vance</td><td>Gravitational wave analysis</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<div class="section-sep"></div>
+
+<!-- ============ 7. CONTENT PILLAR STRATEGY ============ -->
+<section class="section" id="s7">
+  <div class="section-header">
+    <span class="section-number">07</span>
+    <h2>Content Pillar Strategy</h2>
+  </div>
+
+  <h3>7.1 Content Pillars by Researcher</h3>
+
+  <h4 style="color:var(--accent-cyan)">Dr. Mateo Castillo &mdash; Galactic Dynamics &amp; Dark Matter</h4>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Pillar</th><th>Sub-Topics</th><th>Content Types</th></tr></thead>
+      <tbody>
+        <tr><td>Dark Matter Mapping</td><td>JWST weak lensing, cosmic web visualization, dark matter halos</td><td>Research analyses, explainer articles, infographic posts</td></tr>
+        <tr><td>Galaxy Evolution</td><td>Merger simulations, AGN feedback, galaxy morphology</td><td>Deep-dive analyses, &ldquo;What happens when...&rdquo; explainers</td></tr>
+        <tr><td>Andromeda-Milky Way</td><td>Gaia measurements, collision timeline, stellar stream analysis</td><td>Ongoing series: &ldquo;Andromeda Watch&rdquo;</td></tr>
+        <tr><td>Large-Scale Structure</td><td>Cosmic web filaments, void surveys, baryon acoustic oscillations</td><td>Research roundups, data visualization pieces</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h4 style="color:var(--accent-green)">Dr. Jean-Luc Moreau &mdash; Exoplanets &amp; Astrobiology</h4>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Pillar</th><th>Sub-Topics</th><th>Content Types</th></tr></thead>
+      <tbody>
+        <tr><td>Exoplanet Discoveries</td><td>JWST atmospheric data, transit detections, radial velocity</td><td>Breaking analysis, &ldquo;New World Found&rdquo; series</td></tr>
+        <tr><td>Habitable Worlds</td><td>Habitable zone science, water worlds, biosignature gases</td><td>Deep-dive analyses, &ldquo;Could life exist on...?&rdquo; series</td></tr>
+        <tr><td>Planetary Oddities</td><td>Rogue planets, diamond-rain worlds, ultra-hot Jupiters</td><td>&ldquo;Strange Worlds&rdquo; feature series</td></tr>
+        <tr><td>Mission Previews</td><td>Roman Space Telescope, PLATO, Ariel</td><td>Pre-launch explainers, &ldquo;What to expect&rdquo; guides</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h4 style="color:var(--accent-orange)">Dr. Lars Eriksen &mdash; Stellar Astrophysics &amp; Planet Formation</h4>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Pillar</th><th>Sub-Topics</th><th>Content Types</th></tr></thead>
+      <tbody>
+        <tr><td>Star Formation</td><td>Molecular clouds, protostars, Herbig-Haro objects</td><td>&ldquo;Birth of a Star&rdquo; explainer series</td></tr>
+        <tr><td>Stellar Death</td><td>Supernovae, white dwarfs, neutron stars, planetary nebulae</td><td>&ldquo;How Stars Die&rdquo; deep-dive series</td></tr>
+        <tr><td>Solar Physics</td><td>Solar flares, CMEs, solar cycle</td><td>Timely analysis tied to space weather events</td></tr>
+        <tr><td>Protoplanetary Systems</td><td>Disk chemistry, planet migration, debris disks</td><td>Research analyses on planet formation</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h4 style="color:var(--accent-purple)">Dr. Elena Vance &mdash; Cosmology &amp; Fundamental Physics</h4>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Pillar</th><th>Sub-Topics</th><th>Content Types</th></tr></thead>
+      <tbody>
+        <tr><td>CMB Science</td><td>Anomalies, polarization, primordial gravitational waves</td><td>&ldquo;Decoding the CMB&rdquo; ongoing series</td></tr>
+        <tr><td>Dark Matter &amp; Dark Energy</td><td>Detection experiments, theoretical models, observational evidence</td><td>&ldquo;Dark Universe&rdquo; explainer series</td></tr>
+        <tr><td>Early Universe</td><td>Cosmic dawn, reionization, first galaxies, first black holes</td><td>&ldquo;First Light&rdquo; discovery analyses</td></tr>
+        <tr><td>Fundamental Physics</td><td>Quantum gravity, black hole information, modified gravity</td><td>&ldquo;Physics Frontiers&rdquo; deep-dive series</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>7.2 Cross-Researcher Collaboration Content</h3>
+  <div class="card-grid">
+    <div class="card"><h4>JWST Year 4 in Review</h4><p>All 4 researchers analyze JWST&rsquo;s impact on their fields</p></div>
+    <div class="card"><h4>The Dark Universe Report</h4><p>Dr. Castillo (dark matter mapping) + Dr. Vance (dark energy/CMB)</p></div>
+    <div class="card"><h4>From Stars to Planets</h4><p>Dr. Eriksen (star formation) + Dr. Moreau (exoplanet detection)</p></div>
+    <div class="card"><h4>Cosmic Origins Roundtable</h4><p>Quarterly analysis where all 4 discuss the biggest discoveries</p></div>
+  </div>
+</section>
+
+<div class="section-sep"></div>
+
+<!-- ============ 8. CONTENT FORMAT PLAYBOOK ============ -->
+<section class="section" id="s8">
+  <div class="section-header">
+    <span class="section-number">08</span>
+    <h2>Content Format Playbook</h2>
+  </div>
+
+  <h3>8.1 Article Formats</h3>
+
+  <div class="format-card">
+    <div class="format-header"><span class="icon">&#x1f4d1;</span> Format 1: Research Analysis (Primary Format)</div>
+    <div class="format-body">
+      <div class="code-block">
+<span class="hl-key">Title:</span> [SEO-Optimized Headline with Primary Keyword]<br>
+<span class="hl-key">Subtitle:</span> [Long-tail keyword phrase]<br>
+<span class="hl-key">Byline:</span> <span class="hl-str">"Analyzed &amp; Reported by [Researcher] | [Role] at Zendar Universe"</span><br>
+<span class="hl-key">TL;DR:</span> [2-3 sentence summary &mdash; critical for AI citation]<br>
+<span class="hl-comment">---</span><br>
+<span class="hl-key">Section 1:</span> The Discovery (What happened, who published, where)<br>
+<span class="hl-key">Section 2:</span> Why It Matters (Context, significance, connection to field)<br>
+<span class="hl-key">Section 3:</span> The Science Explained (Accessible breakdown)<br>
+<span class="hl-key">Section 4:</span> ZU Research Perspective (Expert commentary, future possibilities)<br>
+<span class="hl-key">Section 5:</span> Key Takeaways (Bullet points &mdash; optimized for featured snippets)<br>
+<span class="hl-comment">---</span><br>
+<span class="hl-key">Related:</span> Publications from Zendar Universe<br>
+<span class="hl-key">FAQ:</span> 3-4 questions with concise answers (FAQPage schema)
+      </div>
+    </div>
+  </div>
+
+  <div class="format-card">
+    <div class="format-header"><span class="icon">&#x1f4d7;</span> Format 2: Explainer Article (Evergreen SEO)</div>
+    <div class="format-body">
+      <div class="code-block">
+<span class="hl-key">Title:</span> <span class="hl-str">"[What/How/Why] + [Topic] + [Qualifier]"</span><br>
+&nbsp;&nbsp;<span class="hl-comment">e.g., "What Is Dark Matter? Everything We Know in 2026"</span><br>
+<span class="hl-key">Byline:</span> <span class="hl-str">"By [Researcher] | [Role] at Zendar Universe"</span><br>
+<span class="hl-comment">---</span><br>
+<span class="hl-key">Quick Answer Box</span> (for featured snippets)<br>
+<span class="hl-key">Section 1:</span> Introduction (hook + keyword-rich overview)<br>
+<span class="hl-key">Sections 2-5:</span> Deep-dive subsections with H2/H3 hierarchy<br>
+<span class="hl-key">Section 6:</span> Current Research &amp; Latest Discoveries<br>
+<span class="hl-key">Section 7:</span> What&rsquo;s Next (future outlook)<br>
+<span class="hl-comment">---</span><br>
+<span class="hl-key">FAQ Section</span> + <span class="hl-key">Related Reading</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="format-card">
+    <div class="format-header"><span class="icon">&#x26a1;</span> Format 3: Discovery Alert (Trending/Breaking)</div>
+    <div class="format-body">
+      <div class="code-block">
+<span class="hl-key">Title:</span> <span class="hl-str">"[Discovery Name]: [Impact Statement]"</span><br>
+&nbsp;&nbsp;<span class="hl-comment">e.g., "Roman Space Telescope Launches: The Exoplanet Hunter That Will Find 100,000 New Worlds"</span><br>
+<span class="hl-key">Byline:</span> <span class="hl-str">"Breaking Analysis by [Researcher]"</span><br>
+<span class="hl-comment">---</span><br>
+<span class="hl-key">1.</span> What Just Happened (fast summary)<br>
+<span class="hl-key">2.</span> Why This Changes Everything<br>
+<span class="hl-key">3.</span> The Data Behind the Discovery<br>
+<span class="hl-key">4.</span> ZU Expert Take<br>
+<span class="hl-key">5.</span> What to Watch For Next
+      </div>
+    </div>
+  </div>
+
+  <h3>8.2 Content Length Guidelines</h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Format</th><th>Word Count</th><th>Publishing Frequency</th></tr></thead>
+      <tbody>
+        <tr><td>Research Analysis</td><td>1,500-2,500</td><td>2-3 per researcher/month</td></tr>
+        <tr><td>Explainer Article</td><td>2,500-4,000</td><td>1 per researcher/month</td></tr>
+        <tr><td>Discovery Alert</td><td>800-1,200</td><td>As breaking news occurs</td></tr>
+        <tr><td>Series Installment</td><td>1,500-2,000</td><td>Monthly per series</td></tr>
+        <tr><td>Quarterly Roundup</td><td>3,000-5,000</td><td>Quarterly</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<div class="section-sep"></div>
+
+<!-- ============ 9. TECHNICAL SEO ============ -->
+<section class="section" id="s9">
+  <div class="section-header">
+    <span class="section-number">09</span>
+    <h2>Technical SEO Requirements</h2>
+  </div>
+
+  <h3>9.1 Schema Markup (JSON-LD)</h3>
+
+  <h4>Researcher Profile Schema</h4>
+  <div class="code-block">
+{<br>
+&nbsp;&nbsp;<span class="hl-key">"@context"</span>: <span class="hl-str">"https://schema.org"</span>,<br>
+&nbsp;&nbsp;<span class="hl-key">"@type"</span>: <span class="hl-str">"Person"</span>,<br>
+&nbsp;&nbsp;<span class="hl-key">"name"</span>: <span class="hl-str">"[Researcher Name]"</span>,<br>
+&nbsp;&nbsp;<span class="hl-key">"jobTitle"</span>: <span class="hl-str">"[New Title]"</span>,<br>
+&nbsp;&nbsp;<span class="hl-key">"worksFor"</span>: {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="hl-key">"@type"</span>: <span class="hl-str">"Organization"</span>,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="hl-key">"name"</span>: <span class="hl-str">"Zendar Universe"</span>,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="hl-key">"url"</span>: <span class="hl-str">"https://zendaruniverse.com"</span><br>
+&nbsp;&nbsp;},<br>
+&nbsp;&nbsp;<span class="hl-key">"description"</span>: <span class="hl-str">"[SEO Meta Description]"</span>,<br>
+&nbsp;&nbsp;<span class="hl-key">"knowsAbout"</span>: [<span class="hl-str">"keyword1"</span>, <span class="hl-str">"keyword2"</span>, <span class="hl-str">"keyword3"</span>],<br>
+&nbsp;&nbsp;<span class="hl-key">"url"</span>: <span class="hl-str">"https://zendaruniverse.com/research/researchers/[slug]/"</span><br>
+}
+  </div>
+
+  <h4>Article Schema</h4>
+  <div class="code-block">
+{<br>
+&nbsp;&nbsp;<span class="hl-key">"@context"</span>: <span class="hl-str">"https://schema.org"</span>,<br>
+&nbsp;&nbsp;<span class="hl-key">"@type"</span>: <span class="hl-str">"Article"</span>,<br>
+&nbsp;&nbsp;<span class="hl-key">"headline"</span>: <span class="hl-str">"[SEO Title]"</span>,<br>
+&nbsp;&nbsp;<span class="hl-key">"description"</span>: <span class="hl-str">"[Meta Description]"</span>,<br>
+&nbsp;&nbsp;<span class="hl-key">"author"</span>: { <span class="hl-key">"@type"</span>: <span class="hl-str">"Person"</span>, <span class="hl-key">"name"</span>: <span class="hl-str">"[Researcher]"</span> },<br>
+&nbsp;&nbsp;<span class="hl-key">"publisher"</span>: { <span class="hl-key">"@type"</span>: <span class="hl-str">"Organization"</span>, <span class="hl-key">"name"</span>: <span class="hl-str">"Zendar Universe"</span> },<br>
+&nbsp;&nbsp;<span class="hl-key">"datePublished"</span>: <span class="hl-str">"[ISO date]"</span>,<br>
+&nbsp;&nbsp;<span class="hl-key">"keywords"</span>: <span class="hl-str">"[comma-separated keywords]"</span>,<br>
+&nbsp;&nbsp;<span class="hl-key">"articleSection"</span>: <span class="hl-str">"[Category]"</span><br>
+}
+  </div>
+
+  <h3>9.2 On-Page SEO Checklist</h3>
+  <ul class="checklist">
+    <li>SEO title: 50-60 characters, primary keyword first</li>
+    <li>Meta description: 150-160 characters, includes CTA, primary + secondary keyword</li>
+    <li>URL slug: short, keyword-rich, hyphenated</li>
+    <li>H1: matches SEO title (one H1 per page)</li>
+    <li>H2/H3 hierarchy: includes question-based keywords</li>
+    <li>Internal links: minimum 3 links to other ZU content</li>
+    <li>External links: 1-2 links to authoritative sources (NASA, ESA, arXiv)</li>
+    <li>Image alt text: descriptive, keyword-inclusive</li>
+    <li>First 100 words: contains primary keyword</li>
+    <li>TL;DR/summary: appears in first 30% of content (AI citation optimization)</li>
+    <li>FAQ section: 3-5 questions with concise answers</li>
+    <li>Author byline: links to researcher profile page</li>
+    <li>Related publications: 3-5 links to related ZU content</li>
+    <li>Word count: minimum 1,500 words for research analyses</li>
+    <li>Reading time: displayed on page</li>
+  </ul>
+
+  <h3>9.3 Site Architecture</h3>
+  <div class="site-tree">
+<span class="folder">zendaruniverse.com/</span><br>
+├── <span class="folder">research/</span> <span class="comment">(Hub page &mdash; all projects &amp; categories)</span><br>
+│&nbsp;&nbsp; ├── <span class="folder">researchers/</span><br>
+│&nbsp;&nbsp; │&nbsp;&nbsp; ├── <span class="file">dr-mateo-castillo/</span><br>
+│&nbsp;&nbsp; │&nbsp;&nbsp; ├── <span class="file">dr-jean-luc-moreau/</span><br>
+│&nbsp;&nbsp; │&nbsp;&nbsp; ├── <span class="file">dr-lars-eriksen/</span><br>
+│&nbsp;&nbsp; │&nbsp;&nbsp; └── <span class="file">dr-elena-vance/</span><br>
+│&nbsp;&nbsp; ├── <span class="folder">categories/</span><br>
+│&nbsp;&nbsp; │&nbsp;&nbsp; ├── <span class="file">cosmology/</span> <span class="comment">(featured snippets target)</span><br>
+│&nbsp;&nbsp; │&nbsp;&nbsp; ├── <span class="file">exoplanetary-science/</span><br>
+│&nbsp;&nbsp; │&nbsp;&nbsp; ├── <span class="file">galactic-dynamics/</span><br>
+│&nbsp;&nbsp; │&nbsp;&nbsp; ├── <span class="file">stellar-astrophysics/</span><br>
+│&nbsp;&nbsp; │&nbsp;&nbsp; └── <span class="file">theoretical-fundamental-physics/</span><br>
+│&nbsp;&nbsp; ├── <span class="folder">[project-slug]/</span><br>
+│&nbsp;&nbsp; │&nbsp;&nbsp; └── <span class="file">[publication-slug]/</span><br>
+│&nbsp;&nbsp; └── <span class="folder">glossary/</span> <span class="comment">(NEW: SEO glossary)</span><br>
+│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ├── <span class="file">dark-matter/</span><br>
+│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ├── <span class="file">dark-energy/</span><br>
+│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ├── <span class="file">exoplanet/</span><br>
+│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; └── <span class="file">cosmic-microwave-background/</span>
+  </div>
+
+  <h3>9.4 E-E-A-T Optimization</h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Signal</th><th>Implementation</th></tr></thead>
+      <tbody>
+        <tr><td>Experience</td><td>Researcher profiles show publication history, analysis track record</td></tr>
+        <tr><td>Expertise</td><td>Clear specialization per researcher, keyword-rich bios, detailed FAQs</td></tr>
+        <tr><td>Authoritativeness</td><td>Consistent author bylines, researcher profile links on every article</td></tr>
+        <tr><td>Trustworthiness</td><td>Citations to original research papers, links to peer-reviewed sources, clear attribution</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<div class="section-sep"></div>
+
+<!-- ============ 10. CONTENT CALENDAR ============ -->
+<section class="section" id="s10">
+  <div class="section-header">
+    <span class="section-number">10</span>
+    <h2>Content Calendar Framework</h2>
+  </div>
+
+  <h3>10.1 Monthly Publishing Schedule (Per Researcher)</h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Week</th><th>Content Type</th><th>Details</th></tr></thead>
+      <tbody>
+        <tr><td>Week 1</td><td><strong>Research Analysis</strong></td><td>Latest major discovery in their field</td></tr>
+        <tr><td>Week 2</td><td><strong>Explainer / Evergreen</strong></td><td>High-search-volume topic (e.g., &ldquo;What is dark matter?&rdquo;)</td></tr>
+        <tr><td>Week 3</td><td><strong>Research Analysis</strong></td><td>Second analysis of a new peer-reviewed paper</td></tr>
+        <tr><td>Week 4</td><td><strong>Series / Discovery Alert</strong></td><td>Ongoing series or breaking news</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p><strong>Total: ~16 articles/month</strong> across all 4 researchers (4 per researcher)</p>
+
+  <h3>10.2 Q2 2026</h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Month</th><th>Priority Content</th><th>Trending Hook</th></tr></thead>
+      <tbody>
+        <tr><td>April 2026</td><td>JWST Cycle 3 late results, Dark Energy Survey analysis</td><td>JWST anniversary coverage</td></tr>
+        <tr><td>May 2026</td><td>Vera C. Rubin Observatory updates, LIGO O4 results</td><td>Gravitational wave season</td></tr>
+        <tr><td>June 2026</td><td>Roman Space Telescope pre-launch series begins</td><td>Building anticipation for fall launch</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>10.3 Q3 2026</h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Month</th><th>Priority Content</th><th>Trending Hook</th></tr></thead>
+      <tbody>
+        <tr><td>July 2026</td><td>Roman Space Telescope deep-dive series</td><td>Launch countdown content</td></tr>
+        <tr><td>August 2026</td><td>Perseid meteor shower + stellar astrophysics tie-in</td><td>Seasonal search spike</td></tr>
+        <tr><td>September 2026</td><td>Roman Space Telescope launch coverage</td><td>Massive search volume event</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>10.4 Q4 2026</h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Month</th><th>Priority Content</th><th>Trending Hook</th></tr></thead>
+      <tbody>
+        <tr><td>October 2026</td><td>Roman first light analysis, Nobel Prize in Physics coverage</td><td>Annual science news peak</td></tr>
+        <tr><td>November 2026</td><td>PLATO mission pre-launch series</td><td>ESA mission hype</td></tr>
+        <tr><td>December 2026</td><td>PLATO launch, Year in Review: &ldquo;2026&rsquo;s Biggest Astronomy Discoveries&rdquo;</td><td>Year-end roundups drive massive traffic</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<div class="section-sep"></div>
+
+<!-- ============ 11. GROWTH ROADMAP ============ -->
+<section class="section" id="s11">
+  <div class="section-header">
+    <span class="section-number">11</span>
+    <h2>Growth Roadmap</h2>
+  </div>
+
+  <!-- Phase 1 -->
+  <div class="phase-card">
+    <div class="phase-header p1">
+      <span class="phase-num">P1</span>
+      <span class="phase-title">Foundation</span>
+      <span class="phase-sub">Months 1&ndash;3</span>
+    </div>
+    <div class="phase-body">
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Action</th><th>Impact</th></tr></thead>
+          <tbody>
+            <tr><td>Update all 4 researcher bios, titles, SEO metadata</td><td>Brand credibility + E-E-A-T signals</td></tr>
+            <tr><td>Implement Article + Person + FAQPage schema on all pages</td><td>Rich results eligibility</td></tr>
+            <tr><td>Rewrite existing publication bylines to &ldquo;Analyzed &amp; Reported by&rdquo;</td><td>Legal safety + credibility</td></tr>
+            <tr><td>Publish 4 evergreen explainer articles (one per researcher)</td><td>Capture high-volume informational queries</td></tr>
+            <tr><td>Launch astronomy glossary (20 initial terms)</td><td>Internal link equity + definition snippets</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- Phase 2 -->
+  <div class="phase-card">
+    <div class="phase-header p2">
+      <span class="phase-num">P2</span>
+      <span class="phase-title">Content Velocity</span>
+      <span class="phase-sub">Months 4&ndash;6</span>
+    </div>
+    <div class="phase-body">
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Action</th><th>Impact</th></tr></thead>
+          <tbody>
+            <tr><td>Reach 16 articles/month publishing cadence</td><td>Content volume parity with Astrobites</td></tr>
+            <tr><td>Launch &ldquo;Andromeda Watch,&rdquo; &ldquo;Strange Worlds,&rdquo; &ldquo;Dark Universe,&rdquo; &ldquo;Birth of a Star&rdquo; series</td><td>Recurring reader engagement</td></tr>
+            <tr><td>Build internal linking mesh (every article links to 3+ others)</td><td>SEO authority distribution</td></tr>
+            <tr><td>Submit sitemap to Google News</td><td>News carousel eligibility</td></tr>
+            <tr><td>Expand glossary to 50+ terms</td><td>Featured snippet dominance</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- Phase 3 -->
+  <div class="phase-card">
+    <div class="phase-header p3">
+      <span class="phase-num">P3</span>
+      <span class="phase-title">Authority Building</span>
+      <span class="phase-sub">Months 7&ndash;12</span>
+    </div>
+    <div class="phase-body">
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Action</th><th>Impact</th></tr></thead>
+          <tbody>
+            <tr><td>Pursue backlinks from Astrobites, Universe Today, science blogs</td><td>Domain authority growth</td></tr>
+            <tr><td>Launch cross-researcher collaboration pieces</td><td>Content differentiation</td></tr>
+            <tr><td>Optimize for AI citation (structured data, TL;DR sections)</td><td>Visibility in ChatGPT, Perplexity, Google AI Overviews</td></tr>
+            <tr><td>Target &ldquo;People Also Ask&rdquo; featured snippets aggressively</td><td>SERP real estate capture</td></tr>
+            <tr><td>Publish &ldquo;2026&rsquo;s Biggest Astronomy Discoveries&rdquo; mega-roundup</td><td>Viral year-end content</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <h3>Key Metrics to Track</h3>
+  <div class="metrics-grid">
+    <div class="metric-card">
+      <div class="metric-label">Organic Traffic</div>
+      <div class="metric-value">15x</div>
+      <div class="metric-sub">12-month target</div>
+    </div>
+    <div class="metric-card">
+      <div class="metric-label">Indexed Pages</div>
+      <div class="metric-value">400+</div>
+      <div class="metric-sub">12-month target</div>
+    </div>
+    <div class="metric-card">
+      <div class="metric-label">Featured Snippets</div>
+      <div class="metric-value">50+</div>
+      <div class="metric-sub">12-month target</div>
+    </div>
+    <div class="metric-card">
+      <div class="metric-label">Domain Authority</div>
+      <div class="metric-value">+25</div>
+      <div class="metric-sub">points in 12 months</div>
+    </div>
+    <div class="metric-card">
+      <div class="metric-label">Avg. Time on Page</div>
+      <div class="metric-value">5min+</div>
+      <div class="metric-sub">12-month target</div>
+    </div>
+    <div class="metric-card">
+      <div class="metric-label">AI Citations</div>
+      <div class="metric-value">Active</div>
+      <div class="metric-sub">ChatGPT + Google AI</div>
+    </div>
+  </div>
+
+  <h3>Appendix: Competitor Content Gap Analysis</h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Topic</th><th>Covered By</th><th>ZU Status</th><th>Opportunity</th></tr></thead>
+      <tbody>
+        <tr><td>&ldquo;What is dark matter&rdquo;</td><td>Space.com, NASA, Wikipedia</td><td>No explainer</td><td><span class="badge badge-high">HIGH</span> Dr. Vance</td></tr>
+        <tr><td>&ldquo;How do stars form&rdquo;</td><td>Universe Today, NASA</td><td>No explainer</td><td><span class="badge badge-high">HIGH</span> Dr. Eriksen</td></tr>
+        <tr><td>&ldquo;Exoplanet list 2026&rdquo;</td><td>NASA Archive</td><td>No list page</td><td><span class="badge badge-medium">MEDIUM</span> Dr. Moreau</td></tr>
+        <tr><td>&ldquo;Andromeda Milky Way collision&rdquo;</td><td>Space.com, Wikipedia</td><td>1 article</td><td><span class="badge badge-high">HIGH</span> Dr. Castillo</td></tr>
+        <tr><td>&ldquo;Roman Space Telescope&rdquo;</td><td>NASA, Space.com</td><td>No coverage</td><td><span class="badge badge-critical">CRITICAL</span> Dr. Moreau</td></tr>
+        <tr><td>&ldquo;PLATO mission ESA&rdquo;</td><td>ESA, Space.com</td><td>No coverage</td><td><span class="badge badge-critical">CRITICAL</span> Dr. Moreau</td></tr>
+        <tr><td>&ldquo;Dark Energy Survey results&rdquo;</td><td>Phys.org, DES website</td><td>No coverage</td><td><span class="badge badge-high">HIGH</span> Dr. Vance</td></tr>
+        <tr><td>&ldquo;What is the cosmic web&rdquo;</td><td>Quanta, SciAm</td><td>No explainer</td><td><span class="badge badge-high">HIGH</span> Dr. Castillo</td></tr>
+        <tr><td>&ldquo;Vera Rubin Observatory&rdquo;</td><td>Astronomy.com, Space.com</td><td>No coverage</td><td><span class="badge badge-high">HIGH</span> Dr. Eriksen</td></tr>
+        <tr><td>&ldquo;Gravitational wave detection 2026&rdquo;</td><td>LIGO, Phys.org</td><td>No coverage</td><td><span class="badge badge-medium">MEDIUM</span> Dr. Vance</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>Appendix: Internal Linking Strategy</h3>
+  <div class="card">
+    <p>Every dummy researcher publication should include:</p>
+    <ol style="padding-left:20px;color:var(--text-secondary)">
+      <li style="margin-bottom:8px"><strong>Link to researcher profile</strong> (author byline link)</li>
+      <li style="margin-bottom:8px"><strong>Link to research project page</strong> (e.g., AGS, EDP, SNOI, CMB Anisotropy)</li>
+      <li style="margin-bottom:8px"><strong>Link to category archive</strong> (e.g., /categories/cosmology/)</li>
+      <li style="margin-bottom:8px"><strong>Link to 2-3 related publications</strong> by same or different researchers</li>
+      <li style="margin-bottom:8px"><strong>Link to real researcher publications</strong> (when topically relevant)</li>
+      <li style="margin-bottom:0"><strong>Link to glossary terms</strong> (when astronomy terms are mentioned)</li>
+    </ol>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="doc-footer">
+  <p>This strategy document is a living blueprint. Update quarterly as search trends evolve, new missions launch, and ZU&rsquo;s content library grows.</p>
+  <p style="margin-top:12px;font-size:.8rem;color:var(--text-muted)">Zendar Universe &mdash; Research Beyond the Universe &mdash; Confidential &copy; 2026</p>
+</footer>
+
+</div><!-- .container -->
+</div><!-- .page-wrapper -->
+
+<!-- Back to Top Button -->
+<button class="back-to-top" id="backToTop" title="Back to top">&uarr;</button>
+
+<script>
+const btn = document.getElementById('backToTop');
+window.addEventListener('scroll', () => {
+  btn.classList.toggle('visible', window.scrollY > 600);
+});
+btn.addEventListener('click', () => {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+</script>
+
+</body>
+</html>
